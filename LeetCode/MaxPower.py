@@ -20,17 +20,15 @@
 """
 class Solution:
     def maxPower(self, s: str) -> (int, str):
-        """
-        返回最长的个数跟对应的字符
-        如果个数相等则返回第一个
-        :param s:
-        :return:
-        """
+        # 假设当前的字符就是最大的出现次数为1次
         maxCount = curCount = 1
-        element = ''
+        # 假设第一个是出现的最大次数的字符
+        element = s[0]
         for i in range(len(s)-1):
             if s[i] == s[i+1]:
                 curCount += 1
+                # 如果当前的小于最大的则element保存的是上一次最大次数
+                # 的字符 大于的情况下才需要更新
                 if curCount > maxCount:
                     element = s[i+1]
                 maxCount = max(curCount, maxCount)
@@ -39,7 +37,5 @@ class Solution:
                 curCount = 1
         return (maxCount, element)
         pass
-
-
 print(Solution().maxPower("leetcode"))
 
