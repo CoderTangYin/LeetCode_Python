@@ -11,9 +11,10 @@ s = "loveleetcode"
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         import collections
-        # 统计每个字符出现的次数
+        # 统计每个字符出现的次数 直接转成字典
         charCountDict = dict(collections.Counter(s))
         arr = []
+        # 从字典中取出字符出现一次的的字符并找出它在字符串的位置返回
         for keyChar in charCountDict:
             if charCountDict[keyChar] == 1:
                 arr.append(keyChar)
