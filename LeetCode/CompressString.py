@@ -6,8 +6,6 @@
 """
 class Solution:
     def compressString(self, S: str) -> str:
-        if S == None or S == "":
-            return "error"
         prevStr = S[0:1]
         # 每个字符至少出现了一次
         count = 1

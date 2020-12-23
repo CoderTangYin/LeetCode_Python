@@ -20,13 +20,20 @@
 """
 class Solution:
     def maxPower(self, s: str) -> (int, str):
+        """
+        返回最长的个数跟对应的字符
+        如果个数相等则返回第一个
+        :param s:
+        :return:
+        """
         maxCount = curCount = 1
         element = ''
         for i in range(len(s)-1):
             if s[i] == s[i+1]:
                 curCount += 1
+                if curCount > maxCount:
+                    element = s[i+1]
                 maxCount = max(curCount, maxCount)
-                element = s[i]
                 pass
             else:
                 curCount = 1
