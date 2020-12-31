@@ -23,4 +23,34 @@ class Solution:
                 return i
         return -1
     pass
-print(Solution().firstUniqChar("loveleetcode"))
+
+    def firstUniqChar1(self, s: str) -> int:
+        valueIdx = -1
+        for idx in range(len(s)):
+            val = s[idx]
+            idxl = idxr = idx
+            lhasRes = False
+            rhasRes = False
+            while idxl - 1 >= 0:
+                idxl -= 1
+                if s[idxl] == val:
+                    lhasRes = True
+                    break
+                    pass
+            if lhasRes == False:
+                while idxr + 1 < len(s):
+                     idxr += 1
+                     if s[idxr] == val:
+                         rhasRes = True
+                         break
+                     pass
+                pass
+            if lhasRes == False and rhasRes == False:
+                valueIdx = idx
+                break
+            pass
+        return valueIdx
+        pass
+    pass
+# print(Solution().firstUniqChar("loveleetcode"))
+print(Solution().firstUniqChar1("loveleetcode"))
