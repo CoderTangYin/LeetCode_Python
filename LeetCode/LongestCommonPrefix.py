@@ -36,8 +36,8 @@ class Solution:
     """
     def longestCommonPrefix1(self, strs: List[str]) -> str:
         res = ""
-        min_str = min(strs, key=len)
-        for idx_min in range(len(min_str)):
+        min_str_l = min(strs, key=len)
+        for idx_min in range(len(min_str_l)):
             idx_s = ""
             # 取出数组每个索引对应的字符
             for s in strs:
@@ -50,6 +50,4 @@ class Solution:
                 break
         return res
         pass
-
-
 print(Solution().longestCommonPrefix1(["flower", "flow", "flight"]))
