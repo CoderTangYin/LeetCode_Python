@@ -21,7 +21,7 @@ class Solution:
                 # 最大值
                 if text1[i - 1] == text2[j - 1]:
                     dp[j] = pre + 1
-                    # 记录相同的子序列
+                    # 记录相同的子序列 ..
                     # if not res.find(text1[i-1]):
                     #     res += text1[i-1]
                 else:
