@@ -18,7 +18,19 @@ class Solution:
             for j in range(i):
                 if nums[i] < nums[j]:
                     dp[i] = max(dp[i], dp[j] + 1)
-
+                    # [1, 2, 1, 1, 1, 1, 1, 1]
+                    # [1, 2, 2, 1, 1, 1, 1, 1]
+                    # [1, 2, 3, 1, 1, 1, 1, 1]
+                    # [1, 2, 3, 2, 1, 1, 1, 1]
+                    # [1, 2, 3, 3, 1, 1, 1, 1]
+                    # [1, 2, 3, 3, 2, 1, 1, 1]
+                    # [1, 2, 3, 3, 3, 1, 1, 1]
+                    # [1, 2, 3, 3, 4, 1, 1, 1]
+                    # [1, 2, 3, 3, 4, 2, 1, 1]
+                    # [1, 2, 3, 3, 4, 3, 1, 1]
+                    # [1, 2, 3, 3, 4, 3, 1, 2]
+                    # print(dp)
+        print(dp)
         return max(dp)
         pass
 
@@ -51,7 +63,7 @@ class Solution:
                     max_value -= 1
         return result
 
-# print(Solution().lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18]))
-arr = [0,1,0,3,2,3]
-print(Solution().lis(arr))
+print(Solution().lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18]))
+# arr = [0,1,0,3,2,3]
+# print(Solution().lis(arr))
 # print(Solution().lengthOfLIS1([10, 9, 2, 5, 3, 7, 101, 18]))
