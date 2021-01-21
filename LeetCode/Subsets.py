@@ -12,11 +12,5 @@ class Solution:
             arr += [val + [num] for val in arr]
         return arr
         pass
-    def subsets1(self, nums: List[int]) -> List[List[int]]:
-        arr = [[]]
-        for num in nums:
-            arr += [val + [num] for val in arr]
-        return arr
-        pass
 
 print(Solution().subsets([1, 2, 3]))
