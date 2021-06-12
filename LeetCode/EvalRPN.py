@@ -1,5 +1,7 @@
 
 '''
+逆波兰表达式
+
 示例 1：
 
 输入：tokens = ["2","1","+","3","*"]
@@ -21,12 +23,20 @@ class Solution:
     	stack = []
     	for val in tokens:
     		if val == '+':
+    			stack.append(stack.pop()+stack.pop())
     			pass
     		elif val == '-':
+    			first = stack.pop()
+    			second = stack.pop()
+    			stack.append(second - first)
     			pass
     		elif val == '*'：
+    			stack.append(stack.pop()*stack.pop())
     			pass
     	    elif val == '/':
+    	    	first = stack.pop()
+    			second = stack.pop()
+    			stack.append(second / first)
     	    	pass
     	    else:
     	    	stack.append(int(i))
