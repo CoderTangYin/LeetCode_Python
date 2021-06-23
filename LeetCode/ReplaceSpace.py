@@ -14,5 +14,10 @@
 '''
 class Solution:
     def replaceSpace(self, s: str) -> str:
-
-        pass
+        res = ''
+    	for str in s:
+    		if s == ' ':
+               res += '%20'
+    	    else:
+    	    	res += str
+    	return res    	
